@@ -1,0 +1,33 @@
+{
+    "name": "componenta/policy-app",
+    "description": "Componenta application integration for policy cache compilation",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.4",
+        "componenta/app": "^1.0",
+        "componenta/config": "^1.0",
+        "componenta/policy": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Componenta\\Policy\\App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Componenta\\Policy\\App\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^4.0"
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "componenta": {
+            "config-providers": [
+                "Componenta\\Policy\\App\\ConfigProvider"
+            ]
+        }
+    }
+}
