@@ -16,10 +16,12 @@ final readonly class PolicyMapContributor implements CompileCacheContributorInte
      */
     public function compile(array $classes): array
     {
-        return [
-            ConfigKey::POLICY => [
-                ConfigKey::COMPILED_POLICIES => (new PolicyMapCompiler())->compile($classes),
-            ],
-        ];
+        $policies = (new PolicyMapCompiler())->compile($classes);
+
+        return $policies === []
+            ? []
+            : [
+                ConfigKey::POLICY => [ConfigKey::COMPILED_POLICIES => $policies],
+            ];
     }
 }

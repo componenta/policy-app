@@ -12,4 +12,8 @@ describe('PolicyMapContributor', function () {
 
         expect($delta[ConfigKey::POLICY][ConfigKey::COMPILED_POLICIES])->toHaveKey(WithClassAttribute::class);
     });
+
+    it('omits the policy section when no metadata is discovered', function () {
+        expect((new PolicyMapContributor())->compile([]))->toBe([]);
+    });
 });
