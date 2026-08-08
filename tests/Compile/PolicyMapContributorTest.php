@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Componenta\Policy\App\Compile\PolicyMapContributor;
 use Componenta\Policy\ConfigKey;
-use Componenta\Policy\Tests\Fixture\AttributeTargets\WithClassAttribute;
+use Componenta\Policy\App\Tests\Fixture\WithClassAttribute;
 
 describe('PolicyMapContributor', function () {
     it('returns the compiled policy map config delta', function () {
