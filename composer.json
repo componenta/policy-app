@@ -7,7 +7,7 @@
         "php": "^8.4",
         "componenta/app": "^1.0.2 || ^2.0 || ^3.0.2",
         "componenta/config": "^2.0.2",
-        "componenta/policy": "^1.0.6"
+        "componenta/policy": "^2.0"
     },
     "autoload": {
         "psr-4": {
