@@ -19,7 +19,7 @@ jobs:
         php: ['8.4', '8.5']
     steps:
       - uses: actions/checkout@v7
-      - name: Checkout policy v2 source
+      - name: Checkout policy v3 source
         uses: actions/checkout@v7
         with:
           repository: componenta/policy
@@ -33,11 +33,11 @@ jobs:
       - name: Configure Composer authentication
         run: composer config --global github-oauth.github.com "${{ github.token }}"
       - run: composer validate --strict
-      - name: Use current policy v2 source
+      - name: Use current policy v3 source
         shell: bash
         run: >-
           composer config --json repositories.componenta-policy
-          '{"type":"path","url":".ci/policy","options":{"versions":{"componenta/policy":"2.0.0"}}}'
+          '{"type":"path","url":".ci/policy","options":{"versions":{"componenta/policy":"3.0.0"}}}'
       - name: Resolve Composer cache directory
         id: composer-cache
         shell: bash
